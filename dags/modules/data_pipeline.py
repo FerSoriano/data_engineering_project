@@ -2,9 +2,8 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
-from .database import Database
-from .country_code import Countries
-from .olympics_medals import Medals
+from .db import Database
+from .etl import Countries, Medals
 
 load_dotenv()
 

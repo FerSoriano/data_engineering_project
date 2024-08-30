@@ -16,8 +16,8 @@ with DAG(
     dag_id="etl_process",
     default_args= default_args,
     description="ETL process to get Olympic Games data",
-    start_date=datetime(2024,8,29),# esto dice que debemos iniciar el 1-Ago-2022 y a un intervalo diario
-    schedule_interval='@daily',
+    start_date=datetime(2024,8,29),
+    schedule='@daily',
     tags=['DE','Preentrega3'],
     catchup=False
     ) as dag:
