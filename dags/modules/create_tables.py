@@ -1,5 +1,5 @@
 import psycopg2
-from db import DatabaseConection
+from .conection import DatabaseConection
 
 class CreateTables(DatabaseConection):
     def __init__(self, config: dict) -> None:

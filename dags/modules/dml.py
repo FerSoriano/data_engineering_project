@@ -1,7 +1,7 @@
 # DML = Data Manipulation Language
 
 import psycopg2
-from db import CreateTables
+from .create_tables import CreateTables
 
 class DataManipulation(CreateTables):
     def __init__(self, config: dict) -> None:
