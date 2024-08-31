@@ -14,3 +14,22 @@ El objetivo de esta preentrega era dockerizar el codigo de la preentrega 2 y cre
     - Tarea 1 - Crear los objetos de SQL
     - Tarea 2 - Ejecutar el proceso de ETL.
   - 1 con el operador de Bash solo para mostrar un mensaje de que el proceso finalizó.
+
+### Requesitos
+
+Para que se pueda ejecutar el **docker-compose.yaml** es necesario el archivo .env.
+
+Para levantar airflow debemos agregar el user id ejecutando el siguiente comando:
+
+- `echo -e "AIRFLOW_UID=$(id -u)" >> ./.env`
+
+Para poder correr el DAG es necesario las variables de entorno. Si se quiere probar debemos de agregar las siguientes variables al .env:
+
+```
+REDSHIFT_USERNAME=
+REDSHIFT_PASSWORD=
+REDSHIFT_HOST=
+REDSHIFT_PORT=
+REDSHIFT_DBNAME=
+REDSHIFT_SCHEMA=
+```
