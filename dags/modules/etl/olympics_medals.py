@@ -41,7 +41,10 @@ class Medals():
 
         # Si se encuentra el medallero, procesa y muestra la información
         if medallero_div:
-            medals = self.get_by_span('span.e1oix8v91.emotion-srm-81g9w1')
+            medals = self.get_by_span('span.e1oix8v91.emotion-srm-19huvme')
+
+            if medals == []:
+                raise Exception("Hubo un problema para obtener las medallas. Revisar la clase SPAN en la pagina web.")
             
             # se agrupan por grupos de 3 [gold, silver, bronze]
             medals_list = []
