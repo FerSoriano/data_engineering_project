@@ -8,6 +8,7 @@ from modules import create_sql_objects, run_etl
 # DAG
 default_args={
     'owner': 'FerSoriano',
+    'depends_on_past': True,
     'retries': 5,
     'retry_delay': timedelta(minutes=2) # 2 min de espera antes de cualquier re intento
 }

@@ -13,13 +13,17 @@ pipeline = DataPipeline(
 )
 
 def create_sql_objects() -> None:
-    pipeline.get_connection()
-    pipeline.valid_today_execution()
-    pipeline.create_sql_objects()
-    pipeline.close_connection()
+    try:
+        pipeline.get_connection()
+        pipeline.valid_today_execution()
+        pipeline.create_sql_objects()
+    finally:
+        pipeline.close_connection()
 
 def run_etl() -> None:
-    pipeline.get_connection()
-    pipeline.valid_today_execution()
-    pipeline.etl_process()
-    pipeline.close_connection()
+    try:
+        pipeline.get_connection()
+        pipeline.valid_today_execution()
+        pipeline.etl_process()
+    finally:
+        pipeline.close_connection()
